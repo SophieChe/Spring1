@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<div class="container">
+
+  <div class="row justify-content-center">
+    <div class="col-md-5">
+      <div class="card">
+        <h2 class="card-title text-center">Insert task description & choose status</h2>
+        <div class="card-body py-md-4">
+          <form _lpchecked="1" action="/update" method="post">
+            <div class="form-group">
+              <p><textarea rows="10" cols="45" name="description" th:text="${description}" class="form-control"></textarea></p>
+            </div>
+            <p><input type="hidden" name="id" th:value="${id}" class="form-control"></p>
+
+
+            <div class="form-group" >
+              <select name="status" class="form-control" id="dropDownList">
+                <option value="0">select status</option>
+                <option th:each="option : ${allstatus}" th:value="${option}" th:text="${option}" th:selected="${option}==${status}"></option>
+              </select>
+
+            </div>
+
+            <div style="width:800px; margin:0 auto;" class="d-flex flex-row align-items-center justify-content-between" >
+              <button class="btn btn-primary">Submit task</button>
+
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

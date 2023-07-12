@@ -5,10 +5,10 @@ import javax.persistence.*;
 @Entity
 public class Task {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String description;
-    @Enumerated(EnumType.STRING)
+    @Enumerated(EnumType.STRING) // переводит Enam в String
     private Status status;
 
     @Override
